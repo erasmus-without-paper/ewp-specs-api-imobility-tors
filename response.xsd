@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    xmlns:mobility="https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/tree/master"
+    elementFormDefault="qualified"
+
+    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/master"
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/master"
+>
+    <!-- WRTODO: Replace all occurrences of 'master' (in all projects) with 'stable-v1' upon release. -->
+
+    <xs:import
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    />
+
+    <xs:import
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-mobilities/master/response.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/tree/master"
+    />
+
+    <xs:annotation>
+        <xs:documentation>
+            This schema is a part of the Erasmus Without Paper project. Before you start
+            using it, make sure you have read the general rules described here:
+
+            http://developers.erasmuswithoutpaper.eu/
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="response">
+        <xs:annotation>
+            <xs:documentation>
+                This describes the format of the response returned by the EWP Transcripts
+                of Records API.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="tor" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Response consists of a list of matching ToR wrappers. Clients should use the
+                            `mobility_id` attribute to match objects with their `mobility_id` request
+                            parameters.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- TODO -->
+                        </xs:sequence>
+                        <xs:attribute name="mobility_id" use="required" type="mobility:OutgoingMobilityIdentifier">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    The value of the `mobility_id` parameter for which this Transcript of Records
+                                    has been matched.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
