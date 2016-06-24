@@ -53,6 +53,10 @@ the [Echo API][echo] specs for details on handling unprivileged requests.
 However, only selected Transcripts of Records should be accessible to the
 caller:
 
+ * If a ToR has not been approved yet, then it SHOULD NOT be accessible via
+   this API. (For details on how ToRs get approved, see history entries
+   described in the XML Schema of [Outgoing Mobilities API](mobilities-api).)
+
  * If the caller is the sending HEI of the Outgoing Mobility object, then he
    MUST be allowed access to read the corresponding ToR.
 
@@ -109,3 +113,4 @@ Servers MUST respond with a valid XML document described by the [response.xsd]
 [echo]: https://github.com/erasmus-without-paper/ewp-specs-api-echo
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
 [institutions-api]: https://github.com/erasmus-without-paper/ewp-specs-api-institutions
+[mobilities-api]: https://github.com/erasmus-without-paper/ewp-specs-api-mobilities
