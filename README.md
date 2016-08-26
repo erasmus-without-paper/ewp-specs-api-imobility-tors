@@ -26,22 +26,31 @@ Request method
 Request parameters
 ------------------
 
-Parameters MUST be provided either in a query string (for GET requests), or in
-the `application/x-www-form-urlencoded` format (for POST requests).
+Parameters MUST be provided in the regular `application/x-www-form-urlencoded`
+format.
+
+
+### `receiving_hei_id` (required)
+
+An identifier of the institution which was the receiving part of all the
+mobilities provided via `mobility_id` parameters. This parameter MUST be
+required by the server even if it covers only a single institution.
 
 
 ### `mobility_id` (repeatable, required)
 
-A list of Outgoing Mobility identifiers (max `<max-ids>` items) - IDs of
-Outgoing Mobility objects for which the client wants to retrieve corresponding
-Transcripts of Records.
+A list of Outgoing Mobility identifiers (max `<max-mobility-ids>` items) - IDs
+of Outgoing Mobility objects for which the client wants to retrieve
+corresponding Transcripts of Records. All of these mobilities should be
+connected to the receiving HEI provided in the `receiving_hei_id` parameter
+(otherwise, they will be ignored). 
 
 This parameter is *repeatable*, so the request MAY contain multiple occurrences
-of it. The server MUST specify the maximum length of this list in its
-manifest file (see `<max-ids>` element in [manifest-entry.xsd]
-(manifest-entry.xsd) file). Clients MUST be prepared that this number may be
-just `1` (so, in some implementations, this parameter is not really
-repeatable).
+of it. The server is REQUIRED to process all of them.
+
+Server implementers provide their own chosen value of `<max-mobility-ids>` via
+their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
+SHOULD parse this value (or assume it's equal to `1`).
 
 
 Permissions
@@ -57,18 +66,19 @@ caller:
    this API. (For details on how ToRs get approved, see history entries
    described in the XML Schema of [Outgoing Mobilities API](mobilities-api).)
 
- * If the caller is the sending HEI of the Outgoing Mobility object, then he
-   MUST be allowed access to read the corresponding ToR.
+ * If the caller covers the sending HEI of the Outgoing Mobility object, then
+   he MUST be allowed access to read the corresponding ToR.
 
- * If the caller is the receiving HEI (yourself), then he MAY be allowed
-   access to read the ToR. (It seems reasonable, but it's really an internal
-   decision of your team.)
+ * If the caller covers the receiving HEI (yourself), then he MAY be allowed
+   access to read the ToR. (It seems reasonable, but we leave this decision
+   to your team.)
 
  * All other callers SHOULD NOT be allowed to view the ToR.
 
  * Note, that you will need to verify these access rights for each ID on the
    `mobility_id` list. It is possible that the caller has access to only some
-   of the IDs he provided.
+   of the IDs he provided. (If this seems problematic, then you can always set
+   your `<max-mobility-ids>` to `1`.)
 
 
 Handling of invalid parameters
@@ -76,11 +86,11 @@ Handling of invalid parameters
 
  * General [error handling rules][error-handling] apply.
 
- * Invalid (unknown) `mobility_id` values MUST be ignored. Servers MUST return
-   a valid (HTTP 200) XML response in such cases, but the response will simply
-   not contain the information on the unknown `mobility_id` values. If all
-   values are unknown, servers MUST respond with an empty envelope. This
-   requirement is true even when `<max-ids>` is `1`.
+ * Invalid (unknown) `mobility_id` values MUST be **ignored**. Servers MUST
+   return a valid (HTTP 200) XML response in such cases, but the response will
+   simply not contain the information on the unknown `mobility_id` values. If
+   all values are unknown, servers MUST respond with an empty `<response>`
+   element. This requirement is true even when `<max-mobility-ids>` is `1`.
 
  * If the caller doesn't have permission to view some of the ToRs corresponding
    to provided `mobility_ids`, then such `mobility_ids` MUST also be ignored,
@@ -93,9 +103,9 @@ Handling of invalid parameters
    from the response. If such feature is requested, we may add it in future
    versions of this API.
 
- * If the length of `mobility_id` list is greater than `<max-ids>`, then
+ * If the length of `mobility_id` list is greater than `<max-mobility-ids>`, then
    servers SHOULD respond with HTTP 400. Clients SHOULD split large
-   requests into a couple of smaller ones (based on the `<max-ids>` value
+   requests into a couple of smaller ones (based on the `<max-mobility-ids>` value
    obtained from the Registry).
 
 

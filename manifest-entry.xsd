@@ -44,11 +44,11 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="max-ids" type="xs:positiveInteger">
+                        <xs:element name="max-mobility-ids" type="xs:positiveInteger">
                             <xs:annotation>
                                 <xs:documentation>
-                                    The maximum number of the `mobility_id` parameters the server can handle on a
-                                    single request.
+                                    The maximum number of `mobility_id` parameters the server is willing to accept
+                                    in one request.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
