@@ -43,7 +43,7 @@ A list of Outgoing Mobility identifiers (max `<max-mobility-ids>` items) - IDs
 of Outgoing Mobility objects for which the client wants to retrieve
 corresponding Transcripts of Records. All of these mobilities should be
 connected to the receiving HEI provided in the `receiving_hei_id` parameter
-(otherwise, they will be ignored). 
+(otherwise, they will be ignored).
 
 This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
