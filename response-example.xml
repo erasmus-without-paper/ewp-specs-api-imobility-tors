@@ -4,22 +4,28 @@
     <!--
     Wojtek's comment: Should we try to reuse EMREX ELMO xmlns?
     -->
+    <!--
+    Kais comment: I leave this to the group.
+    -->
     <tor mobility_id="00000000000000000000000000000001">
         <learning-opportunity-instance>
             <learning-opportunity-specification-ref>
                 <los-code>MX101</los-code>
+                <!-- Kais comment: Should remove non-key info -->
                 <title lang="en">Beginner's calculus</title>
                 <subject-area-code>11.1</subject-area-code>
             </learning-opportunity-specification-ref>
             <academic-term type="start">
                 <year>2017</year>
                 <term xml:lang="en-us">Fall</term>
+                <!-- Kais comment: Should remove non-key info -->
                 <start-date>2017-07-01</start-date>
                 <end-date>2017-12-31</end-date>
             </academic-term>
             <academic-term type="end">
                 <year>2017</year>
                 <term xml:lang="en-us">Fall</term>
+                <!-- Kais comment: Should remove non-key info -->
                 <start-date>2017-07-01</start-date>
                 <end-date>2017-12-31</end-date>
             </academic-term>
