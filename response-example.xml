@@ -7,16 +7,14 @@
             <name xml:lang="en">Beginner's calculus</name>
             <!-- Optional -->
             <isced-code>0541</isced-code>
-            <academic-year>
-                <year-name>2016/2017</year-name>
-                <academic-term>
-                    <term-name>HØST</term-name>
-                    <title xml:lang="en-us">Fall</title>
-                    <title xml:lang="no">Høst</title>
-                    <start-date>2016-07-01</start-date>
-                    <end-date>2017-06-30</end-date>
-                </academic-term>
-            </academic-year>
+            <academic-term>
+                <academic-year-id>2016/2017</academic-year-id>
+                <academic-term-id>HØST</academic-term-id>
+                <display-name xml:lang="en-us">Fall</display-name>
+                <display-name xml:lang="no">Høst</display-name>
+                <start-date>2016-07-01</start-date>
+                <end-date>2016-12-31</end-date>
+            </academic-term>
         </learning-opportunity-instance>
         <credits scheme="ects">15</credits>
         <grade scheme="ects">C</grade>
