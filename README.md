@@ -120,10 +120,11 @@ Data model entities involved in the response
 --------------------------------------------
 
  * Mobility
- * Mobility Component
+ * Learning Agreement
+ * Learning Agreement Component
  * Learning Opportunity Specification
  * Learning Opportunity Instance
- * Academic Year?
+ * Result Distribution
  * Academic Term
 
 
