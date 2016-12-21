@@ -32,18 +32,18 @@ format.
 
 ### `receiving_hei_id` (required)
 
-An identifier of the institution which was the receiving part of all the
-mobilities provided via `mobility_id` parameters. This parameter MUST be
-required by the server even if it covers only a single institution.
+SCHAC ID of the institution which is (or was) the receiving partner of all the
+mobilities provided in `mobility_id` parameter list. This parameter MUST be
+required by the server even if the server covers only a single institution.
 
 
 ### `mobility_id` (repeatable, required)
 
 A list of Outgoing Mobility identifiers (max `<max-mobility-ids>` items) - IDs
 of Outgoing Mobility objects for which the client wants to retrieve
-corresponding Transcripts of Records. All of these mobilities should be
-connected to the receiving HEI provided in the `receiving_hei_id` parameter
-(otherwise, they will be ignored).
+corresponding Transcripts of Records. The HEI referenced in the
+`receiving_hei_id` parameter must be the receiving partner of all these
+mobilities (unmatched mobilities will be ignored).
 
 This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
@@ -63,22 +63,22 @@ However, only selected Transcripts of Records should be accessible to the
 caller:
 
  * If a ToR has not been approved yet, then it SHOULD NOT be accessible via
-   this API. (For details on how ToRs get approved, see history entries
+   this API. (WRTODO: For details on how ToRs get approved, see history entries
    described in the XML Schema of [Outgoing Mobilities API](mobilities-api).)
 
- * If the caller covers the sending HEI of the Outgoing Mobility object, then
-   he MUST be allowed access to read the corresponding ToR.
+ * If the caller covers the sending HEI of the given mobility, then he MUST be
+   allowed read access to the mobility's corresponding ToR.
 
- * If the caller covers the receiving HEI (yourself), then he MAY be allowed
-   access to read the ToR. (It seems reasonable, but we leave this decision
-   to your team.)
+ * If the caller covers the receiving HEI (yourself) of the given mobility,
+   then he MAY be allowed read access to the mobility's corresponding ToR. (It
+   seems reasonable to do so, but we leave this decision to your team.)
 
  * All other callers SHOULD NOT be allowed to view the ToR.
 
- * Note, that you will need to verify these access rights for each ID on the
-   `mobility_id` list. It is possible that the caller has access to only some
-   of the IDs he provided. (If this seems problematic, then you can always set
-   your `<max-mobility-ids>` to `1`.)
+ * Note, that servers will need to verify these access rights for each ID on
+   the `mobility_id` list. It is possible that the caller has access to only
+   some of the mobilities. (If this seems problematic, then you can always
+   simply set your `<max-mobility-ids>` to `1`.)
 
 
 Handling of invalid parameters
@@ -100,13 +100,12 @@ Handling of invalid parameters
  * Currently, clients have no way of telling the difference between "this
    `mobility_id` does not exist" and "it does exist, but you don't have access
    to it". In both cases, the proper `<tor>` element will simply be missing
-   from the response. If such feature is requested, we may add it in future
-   versions of this API.
+   from the response.
 
- * If the length of `mobility_id` list is greater than `<max-mobility-ids>`, then
-   servers SHOULD respond with HTTP 400. Clients SHOULD split large
-   requests into a couple of smaller ones (based on the `<max-mobility-ids>` value
-   obtained from the Registry).
+ * If the length of `mobility_id` list is greater than `<max-mobility-ids>`,
+   then servers SHOULD respond with HTTP 400. Clients SHOULD split large
+   requests into a couple of smaller ones (based on the `<max-mobility-ids>`
+   value obtained from the Registry).
 
 
 Response
