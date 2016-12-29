@@ -63,8 +63,8 @@ However, only selected Transcripts of Records should be accessible to the
 caller:
 
  * If a ToR has not been approved yet, then it SHOULD NOT be accessible via
-   this API. (WRTODO: For details on how ToRs get approved, see history entries
-   described in the XML Schema of [Outgoing Mobilities API](mobilities-api).)
+   this API. Once ToR is approved, the receiving HEI SHOULD request its
+   recognition (via sending HEI's [Outgoing Mobilities API](mobilities-api)).
 
  * If the caller covers the sending HEI of the given mobility, then he MUST be
    allowed read access to the mobility's corresponding ToR.
