@@ -4,7 +4,6 @@
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:emrex="https://github.com/emrex-eu/elmo-schemas/tree/v1"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
-    xmlns:mobility="https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/tree/master"
     elementFormDefault="qualified"
 
     targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/master"
@@ -15,11 +14,6 @@
     <xs:import
         schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
         namespace="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
-    />
-
-    <xs:import
-        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-mobilities/master/response.xsd"
-        namespace="https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/tree/master"
     />
 
     <xs:import
@@ -55,7 +49,7 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="mobility-id" type="xs:string" minOccurs="1" maxOccurs="1">
+                            <xs:element name="mobility-id" type="ewp:UUID" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The value of the `mobility_id` parameter for which this Transcript of Records
