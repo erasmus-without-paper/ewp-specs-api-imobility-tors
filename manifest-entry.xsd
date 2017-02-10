@@ -37,14 +37,14 @@
             <xs:complexContent>
                 <xs:extension base="ewp:ManifestApiEntryBase">
                     <xs:sequence>
-                        <xs:element name="url" type="ewp:HTTPS">
+                        <xs:element name="url" type="ewp:HTTPS" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     An URL at which the Transcripts of Records API is being served.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="max-mobility-ids" type="xs:positiveInteger">
+                        <xs:element name="max-mobility-ids" type="xs:positiveInteger" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     The maximum number of `mobility_id` parameters the server is willing to accept
