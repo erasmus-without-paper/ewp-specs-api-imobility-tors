@@ -49,7 +49,7 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="mobility-id" type="ewp:UUID" minOccurs="1" maxOccurs="1">
+                            <xs:element name="mobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
                                         The value of the `mobility_id` parameter for which this Transcript of Records
