@@ -111,8 +111,8 @@ Handling of invalid parameters
 Response
 --------
 
-Servers MUST respond with a valid XML document described by the [response.xsd]
-(response.xsd) schema. See the schema annotations for further information.
+Servers MUST respond with a valid XML document described by the
+[response.xsd](response.xsd) schema. See the schema annotations for further information.
 
 
 Data model entities involved in the response
