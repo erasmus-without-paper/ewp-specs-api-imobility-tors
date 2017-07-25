@@ -53,14 +53,13 @@ their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
 SHOULD parse this value (or assume it's equal to `1`).
 
 
-Permissions
------------
+Security and permissions
+------------------------
 
-All requests from the EWP Network MUST be allowed access to this API. Consult
-the [Echo API][echo] specs for details on handling unprivileged requests.
+For all endpoints of this API, implementers MUST follow the rules described in
+[EWP Authentication and Security, Version 1][sec-v1] document.
 
-However, only selected Transcripts of Records should be accessible to the
-caller:
+Only selected Transcripts of Records should be accessible to the caller:
 
  * If a ToR has not been approved yet, then it SHOULD NOT be accessible via
    this API. Once ToR is approved, the receiving HEI SHOULD request its
@@ -135,3 +134,4 @@ Data model entities involved in the response
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
 [institutions-api]: https://github.com/erasmus-without-paper/ewp-specs-api-institutions
 [mobilities-api]: https://github.com/erasmus-without-paper/ewp-specs-api-mobilities
+[sec-v1]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v1
