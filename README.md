@@ -56,8 +56,15 @@ SHOULD parse this value (or assume it's equal to `1`).
 Security and permissions
 ------------------------
 
-For all endpoints of this API, implementers MUST follow the rules described in
-[EWP Authentication and Security, Version 1][sec-v1] document.
+This version of this API uses [standard EWP Authentication and Security,
+Version 2][sec-v2]. Server implementers choose which security methods they
+support by declaring them in their Manifest API entry.
+
+This API handles data which is considered private. Server implementers are
+allowed to forbid less-secure methods of authentication and encryption for this
+API (by dropping support for them). Currently, we leave it for the server
+implementers to decide which methods are "secure enough". These recommendations
+MAY change in the future.
 
 Only selected Transcripts of Records should be accessible to the caller:
 
@@ -134,4 +141,4 @@ Data model entities involved in the response
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
 [institutions-api]: https://github.com/erasmus-without-paper/ewp-specs-api-institutions
 [mobilities-api]: https://github.com/erasmus-without-paper/ewp-specs-api-mobilities
-[sec-v1]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v1
+[sec-v2]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2
