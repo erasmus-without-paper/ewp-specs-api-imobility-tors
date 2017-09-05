@@ -55,10 +55,10 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="url" type="ewp:HTTPS" minOccurs="1" maxOccurs="1">
+                        <xs:element name="get-url" type="ewp:HTTPS" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
-                                    An URL at which the Transcripts of Records API is being served.
+                                    An URL at which the `get` endpoint is being served.
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>

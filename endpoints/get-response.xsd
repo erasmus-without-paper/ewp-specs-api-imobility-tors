@@ -6,8 +6,8 @@
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     elementFormDefault="qualified"
 
-    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/stable-v1"
-    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/stable-v1"
+    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/endpoints/get-response.xsd"
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/endpoints/get-response.xsd"
 >
     <xs:import
         schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
@@ -28,7 +28,7 @@
         </xs:documentation>
     </xs:annotation>
 
-    <xs:element name="tors-response">
+    <xs:element name="tors-get-response">
         <xs:annotation>
             <xs:documentation>
                 This describes the format of the response returned by the EWP Transcripts

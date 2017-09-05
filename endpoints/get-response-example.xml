@@ -1,10 +1,10 @@
-<tors-response
-    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/stable-v1"
+<tors-get-response
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/endpoints/get-response.xsd"
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/stable-v1
-        response.xsd
+        https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/endpoints/get-response.xsd
+        https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-api-tors/master/endpoints/get-response.xsd
     "
 >
     <tor>
@@ -93,4 +93,4 @@
             </Signature>
         </elmo>
     </tor>
-</tors-response>
+</tors-get-response>

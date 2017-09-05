@@ -5,6 +5,33 @@ This document describes all the changes made to the *Transcripts of Records
 API* document, starting from its first beta draft version.
 
 
+Master (unreleased)
+-------------------
+
+Many backward-incompatible changes.
+
+* `manifest-entry.xsd`: The `<url>` element has been renamed to `<get-url>`.
+
+* Parts of the existing documentation have been moved to a separate page
+  (which now describes the `get` endpoint).
+
+* The `get` endpoint response was renamed and moved to other XML namespace.
+
+  Previously, the root element of the `get` endpoint's response was:
+
+  ```xml
+  <tors-response xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/tree/stable-v1"/>
+  ```
+
+  And now it is:
+
+  ```xml
+  <tors-get-response xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/endpoints/get-response.xsd"/>
+  ```
+
+  Note, that **both** namespace *and* the element's name has changed.
+
+
 0.3.0
 -----
 
