@@ -5,8 +5,8 @@ This document describes all the changes made to the *Transcripts of Records
 API* document, starting from its first beta draft version.
 
 
-Master (unreleased)
--------------------
+0.4.0
+-----
 
 Many backward-incompatible changes.
 
