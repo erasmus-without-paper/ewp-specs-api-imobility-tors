@@ -1,5 +1,5 @@
-Transcripts of Records API
-==========================
+Incoming Mobility Transcripts of Records API
+============================================
 
 * [What is the status of this document?][statuses]
 * [See the index of all other EWP Specifications][develhub]
@@ -8,10 +8,10 @@ Transcripts of Records API
 Summary
 -------
 
-This document describes the **Transcripts of Records API**. This API is
-implemented by the receiving institution. It allows the sending institution
-to retrieve Transcripts of Records issued by the receiving institution for a
-given set of mobility IDs.
+This document describes the **Incoming Mobility Transcripts of Records API**.
+This API is implemented by the receiving institution. It allows the sending
+institution to retrieve Transcripts of Records issued by the receiving
+institution for a given set of mobility IDs.
 
 
 Security and permissions
@@ -29,9 +29,9 @@ MAY change in the future.
 
 Only selected Transcripts of Records should be accessible to the caller:
 
- * If a ToR has not been approved yet, then it SHOULD NOT be accessible via
-   this API. Once ToR is approved, the receiving HEI SHOULD request its
-   recognition (via sending HEI's [Outgoing Mobilities API](mobilities-api)).
+ * If a ToR has not been approved as "ready for recognition" yet, then it
+   SHOULD NOT be accessible via this API (see discussion
+   [here](https://github.com/erasmus-without-paper/ewp-specs-mobility-flowcharts/issues/3#issuecomment-327196926)).
 
  * If the caller covers the sending HEI of the given mobility, then he MUST be
    allowed read access to the mobility's corresponding ToR.

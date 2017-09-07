@@ -1,4 +1,4 @@
-Transcripts of Records Get endpoint
+Incoming Mobility ToRs Get endpoint
 ===================================
 
 * [What is the status of this document?][statuses]
@@ -8,8 +8,8 @@ Transcripts of Records Get endpoint
 Summary
 -------
 
-This endpoint allows the client (usually the sending HEI) to retrieve specific
-Transcripts of Records from the receiving HEI.
+This endpoint allows the client (usually the sending HEI) to retrieve
+Transcripts of Records for specific Incoming Mobilities from the receiving HEI.
 
 
 Request method

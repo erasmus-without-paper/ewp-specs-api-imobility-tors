@@ -31,8 +31,8 @@
     <xs:element name="tors-get-response">
         <xs:annotation>
             <xs:documentation>
-                This describes the format of the response returned by the EWP Transcripts
-                of Records API.
+                This describes the format of the response returned by the EWP Incoming
+                Mobility Transcripts of Records API.
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
