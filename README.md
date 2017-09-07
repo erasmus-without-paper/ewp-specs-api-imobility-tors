@@ -54,6 +54,7 @@ Endpoints to be implemented
 Server implementers MUST:
 
  * Implement the [`get` endpoint](endpoints/get.md).
+ * Implement the [`index` endpoint](endpoints/index.md).
  * Put the URLs of these endpoints in their [manifest file][discovery-api], as
    described in [manifest-entry.xsd](manifest-entry.xsd).
 
