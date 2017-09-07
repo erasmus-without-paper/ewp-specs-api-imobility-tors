@@ -6,8 +6,8 @@
     xmlns:sec="https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2"
     elementFormDefault="qualified"
 
-    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/manifest-entry.xsd"
-    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-tors/blob/stable-v1/manifest-entry.xsd"
+    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v1/manifest-entry.xsd"
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v1/manifest-entry.xsd"
 >
     <!-- WRTODO: Once released, fix all schemaLocations pointing to its master branch. -->
 
@@ -36,7 +36,7 @@
                 If this element is present in EWP Host's manifest file, then the host states
                 that it implements the Transcripts of Records API described here:
 
-                https://github.com/erasmus-without-paper/ewp-specs-api-tors
+                https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
