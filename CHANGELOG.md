@@ -81,7 +81,7 @@ Many backward-incompatible changes.
 -----
 
 * Modified the examples so that the use proper surrogate IDs, as discussed
-  [here](https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/9#issuecomment-271272493).
+  [here](https://github.com/erasmus-without-paper/ewp-specs-api-omobilities/issues/9#issuecomment-271272493).
 
 
 0.1.0

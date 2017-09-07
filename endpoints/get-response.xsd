@@ -41,16 +41,16 @@
                     <xs:annotation>
                         <xs:documentation>
                             Response consists of a list of matching ToR wrappers. Clients should use the
-                            `mobility_id` attribute to match objects with their `mobility_id` request
+                            `omobility_id` attribute to match objects with their `omobility_id` request
                             parameters.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="mobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
+                            <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
-                                        The value of the `mobility_id` parameter for which this Transcript of Records
+                                        The value of the `omobility_id` parameter for which this Transcript of Records
                                         has been matched.
                                     </xs:documentation>
                                 </xs:annotation>

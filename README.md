@@ -43,9 +43,9 @@ Only selected Transcripts of Records should be accessible to the caller:
  * All other callers SHOULD NOT be allowed to view the ToR.
 
  * Note, that servers will need to verify these access rights for each ID on
-   the `mobility_id` list. It is possible that the caller has access to only
+   the `omobility_id` list. It is possible that the caller has access to only
    some of the mobilities. (If this seems problematic, then you can always
-   simply set your `<max-mobility-ids>` to `1`.)
+   simply set your `<max-omobility-ids>` to `1`.)
 
 
 Endpoints to be implemented
@@ -81,5 +81,5 @@ Data model entities involved in the response
 [echo]: https://github.com/erasmus-without-paper/ewp-specs-api-echo
 [error-handling]: https://github.com/erasmus-without-paper/ewp-specs-architecture#error-handling
 [institutions-api]: https://github.com/erasmus-without-paper/ewp-specs-api-institutions
-[mobilities-api]: https://github.com/erasmus-without-paper/ewp-specs-api-mobilities
+[omobilities-api]: https://github.com/erasmus-without-paper/ewp-specs-api-omobilities
 [sec-v2]: https://github.com/erasmus-without-paper/ewp-specs-sec-intro/tree/stable-v2

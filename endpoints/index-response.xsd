@@ -29,7 +29,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="mobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="omobility-id" type="ewp:AsciiPrintableIdentifier" minOccurs="0" maxOccurs="unbounded">
                     <xs:annotation>
                         <xs:documentation>
                             The list of mobility IDs corresponding to the matched Transcripts of Records
