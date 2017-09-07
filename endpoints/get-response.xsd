@@ -28,7 +28,7 @@
         </xs:documentation>
     </xs:annotation>
 
-    <xs:element name="tors-get-response">
+    <xs:element name="imobility-tors-get-response">
         <xs:annotation>
             <xs:documentation>
                 This describes the format of the response returned by the EWP Incoming
