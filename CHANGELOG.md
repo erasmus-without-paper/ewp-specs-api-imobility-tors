@@ -1,8 +1,42 @@
 Release notes
 =============
 
-This document describes all the changes made to the *Transcripts of Records
-API* document, starting from its first beta draft version.
+This document describes all the changes made to the *Incoming Mobility
+Transcripts of Records API* document, starting from its first beta draft
+version.
+
+
+0.5.0
+-----
+
+* Renamed the document to *Incoming Mobility Transcript of Records API*.
+  We decided that there is a big chance that the previous name (*Transcript of
+  Records API*) might be used for a more general use case than the one provided
+  by this API (i.e. exchanging Transcripts of Records which are not bounded to
+  any mobilities).
+
+  - Changed XML namespaces. All XML namespaces beginning with
+    `https://github.com/erasmus-without-paper/ewp-specs-api-tors/`
+    now begin with
+    `https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/`.
+
+  - In the response, the root element `tors-get-response` was renamed to
+    `imobility-tors-get-response`.
+
+  - In `manifest-entry.xsd`, the `tors` element was renamed to
+    `imobility-tors`.
+
+* Some elements and parameters were renamed due to the recent changes in the
+  Outgoing Mobilities API (see
+  [here](https://github.com/erasmus-without-paper/ewp-specs-api-mobilities/issues/27)):
+
+  - In the response, `mobility-id` element is now named `omobility-id`,
+  - In the request, `mobility_id` parameters is now named `omobility_id`.
+  - In `manifest-entry.xsd`, the `max-mobility-ids` element is now named
+    `max-omobility-ids`.
+
+* The `index` endpoint was added. Servers are REQUIRED to implement it (see
+  [here](https://github.com/erasmus-without-paper/ewp-specs-mobility-flowcharts/issues/3)).
 
 
 0.4.0
