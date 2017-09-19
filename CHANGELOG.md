@@ -6,6 +6,12 @@ Transcripts of Records API* document, starting from its first beta draft
 version.
 
 
+0.6.0
+-----
+
+* New element in `manifest-entry.xsd`: `<sends-notifications/>`.
+
+
 0.5.0
 -----
 
