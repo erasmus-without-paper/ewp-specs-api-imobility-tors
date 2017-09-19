@@ -70,6 +70,21 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="sends-notifications" type="ewp:Empty" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    If this element is present, then the EWP Host states, that it has implemented a
+                                    Notification Sender for Incoming Mobility ToR objects - it will *try* to deliver
+                                    notifications to all Incoming Mobility ToR CNR APIs implemented throughout the EWP
+                                    Network whenever related ToRs are updated.
+
+                                    It is HIGHLY RECOMMENDED for all EWP Hosts to implement this feature. If it is
+                                    not implemented, then sending institutions will need to resolve to pulling
+                                    fresh data from your Incoming Mobility ToRs API quite often - this method
+                                    will increase both latency and the load on both servers.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
