@@ -6,6 +6,17 @@ Transcripts of Records API* document, starting from its first beta draft
 version.
 
 
+0.7.0
+-----
+
+* The `modified_since` parameter of the `index` endpoint is now in the
+  `xs:dateTime` format (not ISO 8601 format). See
+  [this thread](https://github.com/erasmus-without-paper/general-issues/issues/27).
+
+* `<index-url>` element was missing in `manifest-entry.xsd` (see
+  [here](https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/issues/5)).
+
+
 0.6.0
 -----
 
