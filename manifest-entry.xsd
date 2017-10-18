@@ -62,6 +62,13 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="index-url" type="ewp:HTTPS" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    An URL at which the `index` endpoint is being served.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                         <xs:element name="max-omobility-ids" type="xs:positiveInteger" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
