@@ -105,6 +105,9 @@
                                           (At the time of writing this, EMREX ELMO schema v1.1.0 does not allow specifying
                                           identifiers for LOI elements, but we have requested this change and expect it to be
                                           introduced in future versions: https://github.com/emrex-eu/elmo-schemas/issues/10)
+                                          
+                                        * The PDF version of the transcript, if present, SHOULD be located inside the `report` element
+                                          and have type 'Transcript of Records'.
 
                                         ## Signing the ELMO
 
