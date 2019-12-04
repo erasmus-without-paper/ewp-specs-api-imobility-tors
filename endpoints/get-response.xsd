@@ -105,7 +105,7 @@
                                           (At the time of writing this, EMREX ELMO schema v1.1.0 does not allow specifying
                                           identifiers for LOI elements, but we have requested this change and expect it to be
                                           introduced in future versions: https://github.com/emrex-eu/elmo-schemas/issues/10)
-                                          
+
                                         * The PDF version of the transcript, if present, SHOULD be located inside the `report` element
                                           and have type 'Transcript of Records'.
 
@@ -146,13 +146,12 @@
                                     <xs:sequence>
                                         <xs:element name="iscedTable" maxOccurs="unbounded">
                                             <xs:annotation>
-                                                This describes a single grade conversion table for a specific ISCED code,
-                                                as described in the Egracons project.
+                                                <xs:documentation>
+                                                    This describes a single grade conversion table for a specific ISCED code,
+                                                    as described in the Egracons project.
+                                                </xs:documentation>
                                             </xs:annotation>
                                             <xs:complexType>
-                                                <xs:attribute name="iscedCode" type="xs:token" use="required">
-                                                    The ISCED-F code as used in ELMO.
-                                                </xs:attribute>
                                                 <xs:sequence>
                                                     <xs:element name="gradeFrequency" maxOccurs="unbounded">
                                                         <xs:annotation>
@@ -180,6 +179,13 @@
                                                         </xs:complexType>
                                                     </xs:element>
                                                 </xs:sequence>
+                                                <xs:attribute name="iscedCode" type="xs:token" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>
+                                                            The ISCED-F code as used in ELMO.
+                                                        </xs:documentation>
+                                                    </xs:annotation>
+                                                </xs:attribute>
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
