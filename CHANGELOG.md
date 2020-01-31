@@ -6,6 +6,15 @@ Transcripts of Records API* document, starting from its first beta draft
 version.
 
 
+1.0.0
+-----
+
+* First stable release.
+* Remove information about signing transcript (signature is not required in ELMO
+  from version 1.5.0).
+* Remove copy of EMREX ELMO schemas.
+
+
 0.7.0
 -----
 
