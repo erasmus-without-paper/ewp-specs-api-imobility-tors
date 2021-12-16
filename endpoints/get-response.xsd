@@ -91,6 +91,10 @@
                                           to EWP's HEI IDs. E.g. &lt;identifier type="schac"&gt;uw.edu.pl&lt;/identifier&gt;
                                           https://github.com/erasmus-without-paper/ewp-specs-api-registry/#schac-identifiers
 
+                                        * In the `identifier` element, you MUST use the "esi" identifier type to refer
+                                          to the learner. E.g. &lt;identifier type="esi"&gt;urn:schac:personalUniqueCode:int:esi:uio.no:1234567890&lt;/identifier&gt;
+                                          More about European Student Identifier: https://wiki.geant.org/display/SM/European+Student+Identifier
+                                        
                                         * In the `learningOpportunitySpecification` elements, you SHOULD use the
                                           "ewp-los-id" identifier type to refer to LOS IDs introduced in EWP's Courses
                                           API: https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
