@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:emrex="https://github.com/emrex-eu/elmo-schemas/tree/v1"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
     elementFormDefault="qualified"
@@ -119,9 +118,12 @@
                                         this mobility.
 
                                         The grade conversion table should be created as described in the
-                                        Egracons project:
+                                        Egracons project (except for ignoring failing grades - see note below):
 
                                         http://egracons.eu/sites/default/files/Grading_Table_General_Intro_0.pdf
+
+                                        Note: We strongly RECOMMEND adding failing grades, so they can be used in
+                                        other scenarios than those mentioned in Egracons project.
 
                                         ISCED codes that are present in the Transcript of Records SHOULD be
                                         specified in the grade conversion table. It is RECOMMENDED not to specify
