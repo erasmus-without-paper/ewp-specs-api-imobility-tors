@@ -6,6 +6,15 @@ Transcripts of Records API* document, starting from its first beta draft
 version.
 
 
+2.0.0
+-----
+
+* Changed namespace to stable-v2
+* Closed #9 by adding note recommending adding failing grades
+* Fixed ELMO element name for learner
+* Made ESI required in the ELMO sub element
+
+
 1.0.0
 -----
 
