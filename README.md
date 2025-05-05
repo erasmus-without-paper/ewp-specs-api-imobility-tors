@@ -13,6 +13,13 @@ This API is implemented by the receiving institution. It allows the sending
 institution to retrieve Transcripts of Records issued by the receiving
 institution for a given set of mobility IDs.
 
+If HEI provides any API from the following group:
+* Incoming Mobilities ToRs
+* Incoming Mobilities ToRs CNR
+* Incoming Mobilities ToRs Stats
+
+it MUST provide all APIs from this group.
+
 
 ### Business requirements and processes
 
