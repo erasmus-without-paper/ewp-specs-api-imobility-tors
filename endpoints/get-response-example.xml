@@ -13,7 +13,7 @@
         <elmo xmlns="https://github.com/emrex-eu/elmo-schemas/tree/v2">
             <generatedDate>2015-10-31T12:00:00+02:00</generatedDate>
             <learner>
-                <citizenship>PL</citizenship>
+                <citizenship type="ISO">PL</citizenship>
                 <identifier type="nationalIdentifier">83041234567</identifier>
                 <identifier type="esi">urn:schac:personalUniqueCode:int:esi:uio.no:1234567890</identifier>
                 <givenNames>Jan Łukasz</givenNames>
@@ -23,7 +23,7 @@
             </learner>
             <report>
                 <issuer>
-                    <country>PL</country>
+                    <country type="ISO">PL</country>
                     <identifier type="pic">999572294</identifier>
                     <identifier type="erasmus">PL WARSZAW01</identifier>
                     <identifier type="schac">uw.edu.pl</identifier>
