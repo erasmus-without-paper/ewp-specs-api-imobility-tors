@@ -116,7 +116,7 @@
                                           - MUST use the "esi" identifier type to refer
                                             to the learner. E.g., &lt;identifier type="esi"&gt;urn:schac:personalUniqueCode:int:esi:uio.no:1234567890&lt;/identifier&gt;
                                             More about European Student Identifier: https://wiki.geant.org/display/SM/European+Student+Identifier,
-                                          - MUST provide the `bday` subelement.
+                                          - MUST provide the `dateOfBirth` subelement.
                                         
                                         * In the `learningOpportunitySpecification` elements, you:
                                           - MUST use the "ewp-los-id" identifier type to refer to LOS IDs introduced in EWP's Courses
