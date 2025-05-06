@@ -15,7 +15,7 @@
     />
 
     <xs:import
-        schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v2/schema.xsd"
+        schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v2.1.1/schema.xsd"
         namespace="https://github.com/emrex-eu/elmo-schemas/tree/v2"
     />
 
