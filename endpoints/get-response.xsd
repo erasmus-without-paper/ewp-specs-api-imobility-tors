@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:emrex="https://github.com/emrex-eu/elmo-schemas/tree/v1"
+    xmlns:emrex="https://github.com/emrex-eu/elmo-schemas/tree/v2"
     xmlns:ewp="https://github.com/erasmus-without-paper/ewp-specs-architecture/blob/stable-v1/common-types.xsd"
+    xmlns:trm="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     elementFormDefault="qualified"
 
-    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v2/endpoints/get-response.xsd"
-    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v2/endpoints/get-response.xsd"
+    targetNamespace="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v3/endpoints/get-response.xsd"
+    xmlns="https://github.com/erasmus-without-paper/ewp-specs-api-imobility-tors/blob/stable-v3/endpoints/get-response.xsd"
 >
     <xs:import
         schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-architecture/stable-v1/common-types.xsd"
@@ -14,8 +15,13 @@
     />
 
     <xs:import
-        schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v1/schema.xsd"
-        namespace="https://github.com/emrex-eu/elmo-schemas/tree/v1"
+        schemaLocation="https://raw.githubusercontent.com/emrex-eu/elmo-schemas/v2.1.1/schema.xsd"
+        namespace="https://github.com/emrex-eu/elmo-schemas/tree/v2"
+    />
+
+    <xs:import
+        schemaLocation="https://raw.githubusercontent.com/erasmus-without-paper/ewp-specs-types-academic-term/stable-v2/schema.xsd"
+        namespace="https://github.com/erasmus-without-paper/ewp-specs-types-academic-term/tree/stable-v2"
     />
 
     <xs:annotation>
@@ -23,7 +29,7 @@
             This schema is a part of the Erasmus Without Paper project. Before you start
             using it, make sure you have read the general rules described here:
 
-            http://developers.erasmuswithoutpaper.eu/
+            https://developers.erasmuswithoutpaper.eu/
         </xs:documentation>
     </xs:annotation>
 
@@ -54,6 +60,22 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element name="receiving-academic-year-id" type="trm:AcademicYearId" minOccurs="1" maxOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        Academic year during which this mobility took place.
+
+                                        Note that sending and receiving HEIs MAY use different academic year
+                                        identifiers (e.g. "2010/2011" vs. "2010/2010" or "2011/2011"). This
+                                        particular identifier is the year identifier at the *receiving* HEI, not the
+                                        sending HEI.
+
+                                        This means that the sending HEI MUST know how the receiving HEI identifies its
+                                        academic years (i.e., whether it lies on the northern or southern hemisphere),
+                                        and be able to match its mobilities with these identifiers.
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                             <xs:element ref="emrex:elmo" minOccurs="1" maxOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>
@@ -77,34 +99,37 @@
                                          3. Because we don't want to introduce a competing ToR format unless we have
                                             to. It seems better to promote existing formats.
                                          4. Because *some* clients might still make some use of the features which we
-                                            might otherwise deem unnecessary (e.g. PDF attachments).
+                                            might otherwise deem unnecessary (e.g., PDF attachments).
 
                                         ## Cross-referencing IDs
 
                                         EMREX ELMO allows implementers to attach an unlimited number of identifiers
-                                        to many of its elements. In order to facilitate cross-referencing, we need to
+                                        to many of its elements. To facilitate cross-referencing, we need to
                                         assign some explicit values for the `type` attribute used in the `identifier`
                                         elements:
 
-                                        * In the `issuer` element, you SHOULD use the "schac" identifier type to refer
-                                          to EWP's HEI IDs. E.g. &lt;identifier type="schac"&gt;uw.edu.pl&lt;/identifier&gt;
+                                        * In the `issuer` element, you MUST use the "schac" identifier type to refer
+                                          to EWP's HEI IDs. E.g., &lt;identifier type="schac"&gt;uw.edu.pl&lt;/identifier&gt;
                                           https://github.com/erasmus-without-paper/ewp-specs-api-registry/#schac-identifiers
 
-                                        * In the `learner` element, you MUST use the "esi" identifier type to refer
-                                          to the learner. E.g. &lt;identifier type="esi"&gt;urn:schac:personalUniqueCode:int:esi:uio.no:1234567890&lt;/identifier&gt;
-                                          More about European Student Identifier: https://wiki.geant.org/display/SM/European+Student+Identifier
+                                        * In the `learner` element, you:
+                                          - MUST use the "esi" identifier type to refer
+                                            to the learner. E.g., &lt;identifier type="esi"&gt;urn:schac:personalUniqueCode:int:esi:uio.no:1234567890&lt;/identifier&gt;
+                                            More about European Student Identifier: https://wiki.geant.org/display/SM/European+Student+Identifier,
+                                          - MUST provide the `dateOfBirth` subelement.
                                         
-                                        * In the `learningOpportunitySpecification` elements, you SHOULD use the
-                                          "ewp-los-id" identifier type to refer to LOS IDs introduced in EWP's Courses
-                                          API: https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
+                                        * In the `learningOpportunitySpecification` elements, you:
+                                          - MUST use the "ewp-los-id" identifier type to refer to LOS IDs introduced in EWP's Courses
+                                            API: https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers,
+                                          - MUST provide the `title` subelement.
 
-                                        * In the `learningOpportunityInstance` elements, you SHOULD use the
-                                          "ewp-loi-id" identifier type to refer to LOI IDs introduced in EWP's Courses
-                                          API: https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers
-
-                                          (At the time of writing this, EMREX ELMO schema v1.1.0 does not allow specifying
-                                          identifiers for LOI elements, but we have requested this change and expect it to be
-                                          introduced in future versions: https://github.com/emrex-eu/elmo-schemas/issues/10)
+                                        * In the `learningOpportunityInstance` elements, you:
+                                          - MUST use the "ewp-loi-id" identifier type to refer to LOI IDs introduced in EWP's Courses
+                                            API: https://github.com/erasmus-without-paper/ewp-specs-api-courses#unique-identifiers,
+                                          - MUST provide the `academicTerm` subelement,
+                                          - MUST provide the `credit` subelement with `ects` in the `scheme`,
+                                          - MUST provide the `resultLabel` subelement,
+                                          - MUST provide the `resultDistribution` subelement.
 
                                         * The PDF version of the transcript, if present, SHOULD be located inside the `report` element
                                           and have type 'Transcript of Records'.

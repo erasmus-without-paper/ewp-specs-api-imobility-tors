@@ -13,6 +13,22 @@ This API is implemented by the receiving institution. It allows the sending
 institution to retrieve Transcripts of Records issued by the receiving
 institution for a given set of mobility IDs.
 
+If HEI provides any API from the following group:
+* Incoming Mobilities ToRs
+* Incoming Mobilities ToRs CNR
+* Incoming Mobilities ToRs Stats
+
+it MUST provide all APIs from this group.
+
+
+### Business requirements and processes
+
+
+[Business requirements and processes](resources/mandatory_business_requirements_TOR.pdf)
+document clarifies the requirements for the technical solutions
+developed under EWP and in the local implementation that should adequately support
+the business processes related to ToRs at Higher Education Institutions.
+
 
 Security and permissions
 ------------------------
@@ -42,10 +58,10 @@ Only selected Transcripts of Records should be accessible to the caller:
 
  * All other callers SHOULD NOT be allowed to view the ToR.
 
- * Note, that servers will need to verify these access rights for each ID on
+ * Note that servers will need to verify these access rights for each ID on
    the `omobility_id` list. It is possible that the caller has access to only
-   some of the mobilities. (If this seems problematic, then you can always
-   simply set your `<max-omobility-ids>` to `1`.)
+   some mobilities. (If this seems problematic, then you can always
+   set your `<max-omobility-ids>` to `1`.)
 
 
 Endpoints to be implemented

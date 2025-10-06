@@ -29,26 +29,20 @@ Parameters MUST be provided in the regular `application/x-www-form-urlencoded`
 format.
 
 
-### `receiving_hei_id` (required)
-
-SCHAC ID of the institution which is (or was) the receiving partner of all the
-mobilities provided in `omobility_id` parameter list. This parameter MUST be
-required by the server even if the server covers only a single institution.
-
 
 ### `omobility_id` (repeatable, required)
 
 A list of Outgoing Mobility identifiers (max `<max-omobility-ids>` items) - IDs
 of Outgoing Mobility objects for which the client wants to retrieve
-corresponding Transcripts of Records. The HEI referenced in the
-`receiving_hei_id` parameter must be the receiving partner of all these
+corresponding Transcripts of Records. The HEI covered by the caller
+MUST be the sending partner of all these
 mobilities (unmatched mobilities will be ignored).
 
 This parameter is *repeatable*, so the request MAY contain multiple occurrences
 of it. The server is REQUIRED to process all of them.
 
 Server implementers provide their own chosen value of `<max-omobility-ids>` via
-their manifest entry (see [manifest-entry.xsd](manifest-entry.xsd)). Clients
+their manifest entry (see [manifest-entry.xsd](../manifest-entry.xsd)). Clients
 SHOULD parse this value (or assume it's equal to `1`).
 
 
