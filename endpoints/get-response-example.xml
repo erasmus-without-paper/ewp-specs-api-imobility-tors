@@ -18,7 +18,6 @@
                 <identifier type="esi">urn:schac:personalUniqueCode:int:esi:uio.no:1234567890</identifier>
                 <givenNames>Jan Łukasz</givenNames>
                 <familyName>Kowalski</familyName>
-                <alternativeName>Jan Łukasz Kowalski</alternativeName>
                 <dateOfBirth>1983-01-01</dateOfBirth>
             </learner>
             <report>
